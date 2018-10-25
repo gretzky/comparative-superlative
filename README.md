@@ -15,13 +15,13 @@ yarn add comparative-superlative
 ```
 const cs = require('comparative-superlative')
 
-console.log(cs("important", true));
+cs("important", true);
 // more important
 
-console.log(cs("famous"));
+cs("famous");
 // most famous
 
-console.log(cs("happy"));
+cs("happy")
 // happiest
 ```
 
