@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-brill@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/brill/-/brill-1.0.2.tgz#880eb166ab73145d47bfac1ee828b38754ba0055"
-
 normalize-strings@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/normalize-strings/-/normalize-strings-1.1.0.tgz#b24a75ed48176394404f74649b5cb8040e899a75"

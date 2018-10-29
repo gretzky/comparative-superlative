@@ -6,7 +6,6 @@
   "repository": "https://github.com/gretzky/comparative-superlative",
   "author": "Sara Federico <yo@sarafederi.co>",
   "dependencies": {
-    "brill": "^1.0.2",
     "syllable": "^3.1.0"
   }
 }
