@@ -28,8 +28,6 @@ cs("happy")
 // happiest
 ```
 
-comparatives / superlatives must be adjectives. cs checks for that using [brill](https://github.com/words/brill).
-
 ---
 
 ⛳️ init'd with [golf](https://github.com/gretzky/golf)
