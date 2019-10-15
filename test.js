@@ -1,5 +1,8 @@
 const syllable = require("syllable");
 
+// need to figure out how to handle words like 'little'
+// where 'littler' is valid, but 'less' is also valid
+// depending on usage
 const irregulars = ["good", "bad", "much", "far"];
 
 const isIrregular = input => irregulars.includes(input);
@@ -33,22 +36,12 @@ const handleIrregularWord = word => {
   }
 };
 
-const comparative = word => {
-  return syllable(word) >= 3 || word.slice(-1) === "s"
-    ? `more ${word}`
-    : `${word}er`;
-};
+const tooManySyllables = word => syllable(word) >= 3 || word.slice(-1) === "s";
 
 const comparativeSuperlative = (word, isSuperlative) => {
-  const prefixed = `${isSuperlative ? "most" : "more"} ${word}`;
-  const suffixed = `${word + isSuperlative ? "est" : "er"}`;
-  return syllable(word) >= 3 || word.slice(-1) === "s" ? prefixed : suffixed;
-};
-
-const superlative = word => {
-  return syllable(word) >= 3 || word.slice(-1) === "s"
-    ? `most ${word}`
-    : `${word}est`;
+  const prefixed = isSuperlative ? `most ${word}` : `more ${word}`;
+  const suffixed = isSuperlative ? `${word}est` : `${word}er`;
+  return tooManySyllables(word) ? prefixed : suffixed;
 };
 
 const handleWord = word => {
@@ -69,9 +62,9 @@ const cs = input => {
   } else {
     return {
       comparative: comparativeSuperlative(word),
-      superlative: comparativeSuperlative(word)
+      superlative: comparativeSuperlative(word, true)
     };
   }
 };
 
-module.exports = cs;
+console.log(cs("cool"));
