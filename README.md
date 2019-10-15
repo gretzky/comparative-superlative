@@ -15,17 +15,20 @@ yarn add comparative-superlative
 ```
 const cs = require('comparative-superlative')
 
-// cs returns the superlative by default
-// get the comparative by specifying `true`
+// cs returns an object containing both
+// the comparative and superlative
 
-cs("important", true);
-// more important
-
-cs("famous");
-// most famous
+cs("important");
+// {
+//    comparative: "more important"
+//    superlative: "most important"  
+// }
 
 cs("happy")
-// happiest
+// {
+//    comparative: "happier"
+//    superlative: "happiest"  
+// }
 ```
 
 ---
