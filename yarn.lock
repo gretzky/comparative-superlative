@@ -6,18 +6,15 @@ normalize-strings@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/normalize-strings/-/normalize-strings-1.1.0.tgz#b24a75ed48176394404f74649b5cb8040e899a75"
 
-pluralize@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
+pluralize@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
+  integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-syllable@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/syllable/-/syllable-3.1.0.tgz#ddf23fdfa2b0df2b832fba1da63e51d8a00a9535"
+syllable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/syllable/-/syllable-4.0.0.tgz#a050699649944c4c7561b816ce5b441274fa477c"
+  integrity sha512-UGVLrTs1usXGsCSO2HFyoi7tWjHPGjDb4NFHl5MZB8c9edZA5Zd3JBgz58vWsajnSgc5tTHK06UYkc1drwUz+A==
   dependencies:
     normalize-strings "^1.1.0"
-    pluralize "^7.0.0"
-    trim "0.0.1"
-
-trim@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/trim/-/trim-0.0.1.tgz#5858547f6b290757ee95cccc666fb50084c460dd"
+    pluralize "^8.0.0"

@@ -1,11 +1,11 @@
 {
   "name": "comparative-superlative",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "index.js",
   "license": "MIT",
   "repository": "https://github.com/gretzky/comparative-superlative",
   "author": "Sara Federico <sfed617@gmail.com>",
   "dependencies": {
-    "syllable": "^3.1.0"
+    "syllable": "^4.0.0"
   }
 }
