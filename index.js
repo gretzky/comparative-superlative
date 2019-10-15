@@ -55,10 +55,6 @@ const handleWord = word => {
   }
 };
 
-/**
- * cs - returns the formatted word if the word is an adjective
- * @param {string} input - the input to analyze
- */
 const cs = input => {
   const word = handleWord(input);
 
