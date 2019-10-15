@@ -1,31 +1,74 @@
 const syllable = require("syllable");
 
-/**
- * switchY - checks if last letter of the word is 'y' and replaces it with an 'i'
- * @param {string} word - the word to check
- */
-const switchY = word => word.slice(0, -1) + `i`;
+const irregulars = ["good", "bad", "much", "far"];
 
-/**
- * getSuffix - returns the appropriate suffix based on comparative or superlative
- * @param {boolean} compare - whether or not you want to use the comparative
- */
-const getSuffix = compare => (compare ? "er" : "est");
+const isIrregular = input => irregulars.includes(input);
+
+const handleIrregularWord = word => {
+  switch (word) {
+    case "good":
+      return {
+        comparative: "better",
+        superlative: "best"
+      };
+    case "bad":
+      return {
+        comparative: "worse",
+        superlative: "worst"
+      };
+    case "much":
+      return {
+        comparative: "more",
+        superlative: "most"
+      };
+    case "far":
+      return {
+        comparative: ["further", "farther"],
+        superlative: ["furthest", "farthest"]
+      };
+    default:
+      throw new Error(
+        "You've encountered a mystery error! Please open an issue so I know what caused this."
+      );
+  }
+};
+
+const tooManySyllables = word => {
+  return syllable(word) >= 3 || word.slice(-1) === "s";
+};
+
+const comparative = word => {
+  return tooManySyllables(word) ? `more ${word}` : `${word}er`;
+};
+
+const superlative = word => {
+  return tooManySyllables(word) ? `most ${word}` : `${word}est`;
+};
+
+const handleWord = word => {
+  if (word.slice(-1) === "y" && !tooManySyllables(word)) {
+    return word.slice(0, -1) + "i";
+  } else if (word.slice(-1) === "e") {
+    return word.slice(0, -1);
+  } else {
+    return word;
+  }
+};
 
 /**
  * cs - returns the formatted word if the word is an adjective
- * @param {string} word
- * @param {boolean} compare
+ * @param {string} input - the input to analyze
  */
-const cs = (word, compare) => {
-  // if word has 3 or more syllables or ends in 's', we prepend 'more' or 'most'
-  if (syllable(word) >= 3 || word.slice(-1) === "s") {
-    return compare ? "more " : "most " + word;
+const cs = input => {
+  const word = handleWord(input);
+
+  if (isIrregular(input)) {
+    return handleIrregularWord(input);
   } else {
-    // otherwise, return the 'er' or 'est' suffix
-    return word.slice(-1) === "y"
-      ? switchY(word) + getSuffix(compare)
-      : word + getSuffix(compare);
+    return {
+      comparative: comparative(word),
+      superlative: superlative(word)
+    };
   }
 };
 
