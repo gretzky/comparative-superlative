@@ -33,4 +33,4 @@ cs("happy")
 
 ---
 
-⛳️ init'd with [golf](https://github.com/gretzky/golf)
+💀 init'd with [skeletor](https://github.com/gretzky/skeletor)
